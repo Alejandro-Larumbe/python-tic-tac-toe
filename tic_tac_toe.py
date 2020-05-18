@@ -1,7 +1,7 @@
 import random
 
 
-# This method must be
+# This function must be completed
 def space_value(board, index):
     """
     Get the value for a space in the board.
@@ -29,6 +29,7 @@ def draw_board(board):
     print(f" {space_value(board, 1)} | {space_value(board, 2)} | {space_value(board, 3)}")
     print("   |   |")
 
+
 def get_player_and_computer_letters():
     """
     Lets the player type which letter they want to be.
@@ -45,6 +46,8 @@ def get_player_and_computer_letters():
     else:
         return ["O", "X"]
 
+
+# This function must be completed
 def play_again():
     """
     Determines if the player wants to play again.
@@ -61,6 +64,8 @@ def make_move(board, letter, move):
     """Set the board at index move to the provided letter"""
     board[move] = letter
 
+
+# This function must be completed
 def is_winner(board, letter):
     """
     Determines if the specified letter is a winner.
@@ -70,10 +75,13 @@ def is_winner(board, letter):
     """
     pass
 
+
 def is_space_free(board, move):
     """Return True if the value in board at move is " "."""
     return board[move] == " "
 
+
+# This function must be completed
 def get_player_move(board):
     """
     Prompt the player for their move and return their value as an integer.
@@ -85,6 +93,8 @@ def get_player_move(board):
     """
     pass
 
+
+# This function must be completed
 def get_random_move(board):
     """
     Returns a valid random move for the computer from an empty space in the
@@ -94,6 +104,8 @@ def get_random_move(board):
     """
     pass
 
+
+# This function must be completed
 def is_board_full(board):
     """
     Return True if every space on the board has been taken. Otherwise return

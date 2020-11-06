@@ -12,7 +12,7 @@ def space_value(board, index):
     Arguments: board: An array of nine strings index: The value in the board to
     interrogate
     """
-    pass
+    return board[index]
 
 
 def draw_board(board):
@@ -57,7 +57,7 @@ def play_again():
     "y". If the value does begin with "y", then return True. Otherwise, return
     False.
     """
-    pass
+    return input('Do you want to play again?').lower().startswith('y')
 
 
 def make_move(board, letter, move):
@@ -73,7 +73,11 @@ def is_winner(board, letter):
     Given the board and the player's letter, this function returns True if that
     player has won.
     """
-    pass
+    combos = ((1,2,3,), (4,5,6), (7,8,9), (1,4,7), (2,5,8), (3,6,9),(1,5,9),(3,5,7))
+    for (x, y, z) in combos:
+        if letter == board[x] == board[y] == board[z]:
+            return True
+    return False
 
 
 def is_space_free(board, move):
@@ -91,8 +95,15 @@ def get_player_move(board):
     then the function tells the player that is an invalid move and prompts the
     player, again, for a value.
     """
-    pass
 
+    while True:
+        try:
+            index = int(input('where do you wanna play?'))
+            if board[index] == ' ':
+                return index
+            print('invalid position')
+        except:
+            print('please enter an integer')
 
 # This function must be completed
 def get_random_move(board):
@@ -102,7 +113,7 @@ def get_random_move(board):
 
     To get nice random moves, consider using the random.shuffle method, here.
     """
-    pass
+    return random.choice([index for index in range(1, 10) if is_space_free(board, index)])
 
 
 # This function must be completed
@@ -111,7 +122,7 @@ def is_board_full(board):
     Return True if every space on the board has been taken. Otherwise return
     False.
     """
-    pass
+    return board.count(' ') == 1
 
 print("Welcome to Tic Tac Toe!")
 
